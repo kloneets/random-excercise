@@ -1,0 +1,46 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .exec-list {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+      }
+      .exec {
+        width: 30%;
+        display: inline-block;
+        vertical-align: top;
+        padding: 10px;
+      }
+      .exec p {
+        display: inline-block;
+        float: rigth;
+      }
+      .exec img {
+        float: left;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Random Excercise</h1>
+    <p>Exercise count: {{.Cnt}}</p>
+    <div id="exec-list">
+      {{ range $p := .Pages }}
+      <div class="exec">
+        <img src="/assets/excercises/{{ $p.Id }}.png" />
+        <p>{{ $p.Description }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </body>
+</html>
